@@ -1,0 +1,27 @@
+			<%=render :partial => "layouts/right"%>			
+			
+			<div id="BoxLeft">
+				<div id="Noticias">
+					<%= image_tag "home/tit_noticias.png", :alt => "Not&iacute;cias", :style => "margin-bottom:13px;" %> 
+					
+						<div id="Noticia">
+							<table width="100%" cellspacing="" cellpadding="0" border="0">
+							<tr>
+							<td valign="top" style="padding-top:20px;">
+								<div class="Foto">
+								<%=image_tag @noticia.foto.url(:thumb)%>
+								</div>
+							</td>
+							<td>
+								<p class="Titulo"><%=@noticia.titulo%></p>
+								<p class="Texto"><%=@noticia.noticia%></p>
+								
+								<%= image_tag "home/bullet.gif", :alt => "Voltar" %> <a href="javascript:history.go(-1);">Voltar</a>
+							</td>
+							</tr>
+							</table>
+						</div>
+				</div>
+			</div>
+			
+			

@@ -1,0 +1,35 @@
+<% if flash[:msg] %>
+<div id="mensagem">
+	<%=flash[:msg]%>
+</div>
+<% end %>
+
+<% form_for @noticia, :html => { :multipart => :true } do |f| %>
+	<%=f.error_messages%>
+	<label>
+		Titulo:
+		<%=f.text_field :titulo %>
+	</label><br><br>
+	
+	<label>
+		Descricao:<br>
+		<%=f.text_area :descricao, :class => "mceEditor" %>
+	</label><br><br>
+	
+	<label>
+		Noticia:<br>
+		<%=f.text_area :corpo, :class => "mceEditor"  %>
+	</label><br><br>
+	
+	<%= f.label :tags %>
+		Tags: <i>Ex:Comunicação, Twitter, Atibaia<i><br>
+		<%=f.text_field :tag_list, :style => "width:100%;"  %>
+	<br><br>
+	
+	
+	<label>
+		Imagem: <%=f.file_field :foto%>
+	</label><br><br>
+	
+	<button type="submit">Salvar</button>
+<% end %>

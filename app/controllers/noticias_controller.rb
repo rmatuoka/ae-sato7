@@ -25,8 +25,8 @@ class NoticiasController < ApplicationController
 	
 	def create
 		@noticia = Noticia.create(params[:noticia])
-		@noticia.tag_list []
-		@noticia.tag_list = params[:noticia][:tags]
+		#@noticia.tag_list []
+		@noticia.tag_list = params[:noticia][:tag_list]
 
 		
 		if @noticia.save

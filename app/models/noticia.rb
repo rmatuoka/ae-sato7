@@ -3,7 +3,7 @@ class Noticia < ActiveRecord::Base
 	
 	validates_presence_of :titulo
 	validates_presence_of :descricao
-	validates_presence_of :noticia
+	validates_presence_of :corpo
 	
 	has_attached_file :foto, :styles => { :thumb => "123x123>", :medio => "450x450>" },
 				:url => "/uploads/:attachment/:id/:basename_:style.:extension",
