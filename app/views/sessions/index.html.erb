@@ -1,0 +1,8 @@
+<h2>Usuarios</h2>
+
+<ul>
+	<% @usuarios.each do |u| %>
+	<li><%=u.login%> - <%= u.password%></li>
+	<% end %>
+</ul>
+

@@ -1,0 +1,3 @@
+class AgenciaController < ApplicationController
+	
+end

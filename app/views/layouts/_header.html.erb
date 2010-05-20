@@ -1,0 +1,23 @@
+			<a href="/"><%= image_tag "header/logo.gif", :alt => "SATO7 Comunica&ccedil;&atilde;o Estrat&eacute;gica", :class => "Logo" %> </a>
+			<div id="Login" style="margin-top:13px;">
+			<%if session[:logged]%>
+				Ol&aacute; <span><%=session[:login].to_s%></span>, seja bem vindo.<br>
+				<%=link_to "Logout", sessions_path(1), :method => :delete%>
+			<%else%>
+				
+				<%=form_tag home_path, :method => :post%>
+					<%=image_tag("header/tx_login.gif", :alt => "Login")%>
+					<input type="Text" value="" name="login" id="login" class="FormHeader">
+					<input type="Password" value="" name="password" id="password" class="FormHeader">
+					<input type="Image" src="/images/header/bt_ok.gif" width="9" height="15">
+				</form>
+			<%end%>
+			</div>
+			
+			<div id="Menu">
+				<%= link_to image_tag("menu/mn_agencia.gif", :alt => "A Ag�ncia"), "/agencia"%>
+				<%= link_to image_tag("menu/mn_servicos.gif", :alt => "Servi�os"), "/servicos"%>
+				<%= link_to image_tag("menu/mn_cases.gif", :alt => "Cases"), "/cases"%>
+				<%= link_to image_tag("menu/mn_clientes.gif", :alt => "Clientes"), "/clientes"%>
+				<%= link_to image_tag("menu/contato.jpg", :alt => "Contato"), "/contatos"%>
+			</div>

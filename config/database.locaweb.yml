@@ -1,0 +1,8 @@
+production:
+  adapter: mysql
+  encoding: utf8
+  database: sato7
+  username: sato7
+  password: 
+  host: 
+  pool: 5

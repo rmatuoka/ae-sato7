@@ -1,0 +1,38 @@
+			<div id="BoxLeft">
+				<%=image_tag "titulos/sala_imprensa.png", :alt => "Imprensa"%>
+				<hr>
+				<p class="Texto">
+					Voc&ecirc; jornalista, que gostaria de participar de eventos e promo&ccedil;&otilde;es que a <span class="vermelho">SATO7</span> vai promover no decorrer dos anos, cadastre-se!
+				</p>
+				<%if flash[:msgInterna]%>
+					<%=flash[:msgInterna]%>
+				<%end%>
+				
+				<% form_for(@imprensa) do |f| %>
+				<%=f.error_messages%><br>
+				<table class="tableForm">
+				<tr>
+				<td>Nome Completo</td>
+				<td><%= f.text_field :nome %></td>
+				</tr>
+				<tr>
+				<td>Telefone</td>
+				<td><%= f.text_field :telefone %></td>
+				</tr>
+				<tr>
+				<td>E-mail</td>
+				<td><%= f.text_field :email %></td>
+				</tr>
+				<tr>
+				<td>Empresa</td>
+				<td><%= f.text_field :empresa %></td>
+				</tr>
+				<tr>
+				<td></td>
+				<td><%= f.submit "Enviar", :class => "botao" %></td>
+				</tr>
+				</table>
+				<% end %>
+			</div>
+			
+			<%=render :partial => "layouts/right"%>

@@ -1,0 +1,15 @@
+			<div id="BoxLeft">
+				<%=image_tag "titulos/clientes.png", :alt => "Clientes"%>
+				<hr>
+				<p class="Texto">
+					Nossos clientes e parceiros s&atilde;o, antes de tudo, nossos amigos e &eacute; desta forma que gostamos de trata-los. Todos aqueles que conhecem e se envolvem de alguma forma com a <span class="vermelho">SATO7</span> s&atilde;o especiais para n&oacute;s e merecem todo respeito e considera&ccedil;&atilde;o.<br>
+					<br>
+					Conhe&ccedil;a alguns deles.<br>
+					<br>
+				</p>				
+				<%@clientes.each do |c|%>
+					<%=image_tag c.logo.url(:thumb), :alt => c.titulo, :class => "logoCliente"%>
+				<%end%>
+			</div>
+			
+			<%=render :partial => "layouts/right"%>

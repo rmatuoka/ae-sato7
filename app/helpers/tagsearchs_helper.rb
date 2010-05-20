@@ -1,0 +1,2 @@
+module TagsearchsHelper
+end

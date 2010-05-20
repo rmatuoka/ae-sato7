@@ -1,0 +1,41 @@
+			<% content_for :destaque do %>
+			<div id="Destaque">
+				<%= image_tag "titulos/cases.png", :alt => "Cases" %> 
+				<hr>
+				<object id="myFlashMovie" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="950" height="466" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">
+				<param name="movie" value="/cases.swf" />
+				<param name="quality" value="high" />
+				<param name="wmode" value="transparent" /> 
+				<embed type="application/x-shockwave-flash" width="950" height="466" src="/cases.swf" name="myFlashMovie" quality="high" wmode="transparent" allowscriptaccess="sameDomain" pluginspage="http://www.macromedia.com/go/getflashplayer" align="middle"></embed>
+				</object>
+			</div>
+			<% end %> 
+
+			<%=render :partial => "layouts/right"%>			
+			
+			<div id="BoxLeft">
+				<div id="BoxInterna">
+					<%= image_tag "titulos/sobre_case.png", :alt => "Sobre o Case", :class => "tituloInterna" %> 
+					<div id="caseslist">					
+						<%
+						counter = 0
+						style = "none"						
+						@cases.each do |c|
+							if counter == 1
+								style = "inline"
+							else
+								style = "none"		
+							end
+							%>				
+							<div id="<%=counter%>" style="display:<%=style%>;">
+								<h2 class="vermelho"><%=c.titulo%></h2>
+								<p class="texto"><%=c.case%></p>
+							</div>
+						<%
+						counter = counter + 1
+						end%>
+					</div>
+				</div>
+
+			</div>
+			

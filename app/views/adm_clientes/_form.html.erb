@@ -1,0 +1,19 @@
+<% if flash[:msg] %>
+<div id="mensagem">
+	<%=flash[:msg]%>
+</div>
+<% end %>
+
+<% form_for @cliente, :html => { :multipart => :true } do |f| %>
+	<%=f.error_messages%>
+	<label>
+		Titulo:
+		<%=f.text_field :titulo %>
+	</label><br><br>
+	
+	<label>
+		<%=f.file_field :logo%>
+	</label><br><br>
+	
+	<button type="submit">Salvar</button>
+<% end %>

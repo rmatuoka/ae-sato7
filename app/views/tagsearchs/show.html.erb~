@@ -1,0 +1,29 @@
+			<%=render :partial => "layouts/right"%>			
+			
+			<div id="BoxLeft">
+				<div id="Noticias">
+					<%= image_tag "home/tit_noticias.png", :alt => "Not&iacute;cias", :style => "margin-bottom:13px;" %> 
+					
+					<%@tagsearchs.each do |n|%>
+						<div id="Noticia">
+							<table width="100%" cellspacing="" cellpadding="0" border="0">
+							<tr>
+							<td valign="top" style="padding-top:20px;">
+								<div class="Foto">
+								<%=image_tag n.foto.url(:thumb)%>
+								</div>
+							</td>
+							<td>
+								<p class="Titulo"><%=n.titulo%></p>
+								<p class="Texto"><%=n.descricao%></p>
+								
+								<p><%= image_tag "home/bullet.gif", :alt => "Leia mais" %> <%=link_to "Ler mais", ler_noticia_path(n)%></p>
+							</td>
+							</tr>
+							</table>
+						</div>
+					<%end%>
+				</div>
+			</div>
+			
+			<%=render :partial => "layouts/right"%>

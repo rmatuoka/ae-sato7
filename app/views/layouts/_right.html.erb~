@@ -1,0 +1,48 @@
+<div id="BoxRight">
+	<div id="Siga">
+		<%= image_tag "home/tit_siga.png", :alt => "Siga a SATO7"%>
+		
+		<div id="Box">
+		<%
+		#require das gems necessarias
+		
+		require 'rubygems'
+		require 'yaml'
+		require 'twitter'
+		
+		#autenticacao via httparty
+		
+		httpauth = Twitter::HTTPAuth.new('sato7', '28625473873')
+		client = Twitter::Base.new(httpauth)
+		
+		search = Twitter::Search.new.from('sato7')
+		search.per_page(5)
+		
+		search.each  do |r| %>
+			<p><%=r.text%>. <i><%=time_ago_in_words(r.created_at)%></i></p><br>
+		<%end%>
+			
+			<hr color="#2d2d2d" size="1" style="margin:20px 0px 20px 0px;">
+			<a href="http://twitter.com/sato7" class="Follow" target="_blank"><img src="/images/home/bt_follow.gif" width="50" height="11" alt="Follow"></a>
+		</div>
+	</div>
+	
+	<div id="TagCloud">
+		<%@Gtags = Noticia.tag_counts_on(:tags)%>
+		
+		<%= image_tag "home/tit_tagcloud.png", :alt => "Tag Cloud"%>
+		
+		<div id="Box">
+		
+		<% tag_cloud(@Gtags, %w(ZeroPorcento ZeroPorcento CiquentaPorcento CemPorcento)) do |tag, css_class| %>
+
+			
+
+			<%= link_to tag.name + " ", tagsearch_path(tag.name), :class => css_class %> 
+	
+		<% end %>
+		
+		<!-- <span class="CemPorcento">Comunica&ccedil;&atilde;o</span> ipsum dolor sit amet consectetuer adipiscing elit, <span class="CiquentaPorcento">Midia</span> diam Branding nibh i enim ad minim Campanhas ad minim <span class="CiquentaPorcento">Atibaia</span> -->
+		</div>
+	</div>
+</div>

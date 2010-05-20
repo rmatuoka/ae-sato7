@@ -1,0 +1,48 @@
+			<div id="BoxLeft">
+				<%=image_tag "titulos/contato.png", :alt => "Contato"%>
+				<hr>
+				<p class="texto">
+					Se voc&ecirc; se interessou por um de nossos servi&ccedil;os e quer fazer com que sua empresa se torne uma marca de sucesso ou pretende fazer alguma parceria conosco, entre em contato pelo formul&aacute;rio ou pelos dados abaixo.<br>
+					<br>
+					Estaremos dispostos a atender voc&ecirc;, analisar sua situa&ccedil;&atilde;o e oferecer as melhores solu&ccedil;&otilde;es em comunica&ccedil;&atilde;o integrada, para que voc&ecirc; obtenha os melhores resultados poss&iacute;veis e consiga atingir seus objetivos.<br>
+					<br>
+					Tel: 11 2427.8879<br>
+					End. Av. Lucas Nogueira Garc&ecirc;s, 2630<br>
+					Sala 05 - Jd. Paulista - Atibaia/SP<br>
+				</p>
+				<%if flash[:msgInterna]%>
+					<%=flash[:msgInterna]%>
+				<%end%>
+								
+				<% form_for(@contato) do |f| %>
+					<%=f.error_messages%><br>
+					<table class="tableForm">
+					<tr>
+					<td>Nome Completo</td>
+					<td><%= f.text_field :nome %></td>
+					</tr>
+					<tr>
+					<td>Telefone</td>
+					<td><%= f.text_field :telefone %></td>
+					</tr>
+					<tr>
+					<td>E-mail</td>
+					<td><%= f.text_field :email %></td>
+					</tr>
+					<tr>
+					<td>Empresa</td>
+					<td><%= f.text_field :empresa %></td>
+					</tr>
+					<tr>
+					<td valign="top">Mensagem</td>
+					<td><%= f.text_area :mensagem %></td>
+					</tr>
+					<tr>
+					<td></td>
+					<td><%= f.submit "Enviar", :class => "botao" %></td>
+					</tr>
+					</table>
+				<% end %>
+			</div>
+			
+			<%=render :partial => "layouts/right"%>

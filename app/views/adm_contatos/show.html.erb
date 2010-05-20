@@ -1,0 +1,21 @@
+<div id="Breadcrumb">
+		administração > <a href="/adm_contatos/">contatos</a>
+	</div>
+	<div id="Content">
+		<span class="Titulo">Contato</span>
+		<div class="Linha"></div>
+		<div class="Toolbar">
+			<li class="Help"><a href="#">Ajuda</a></li>
+		</div>
+		
+		<div id="Grid">
+			<h3><%=@contato.nome%> - <%=@contato.email%></h3><br>
+			<p>
+			<i><%=@contato.empresa%> - tel: <%=@contato.telefone%></i><br><br>
+			<%=@contato.mensagem%>
+			</p>
+
+		</div>
+		<div class="Linha"></div>
+	</div>
+

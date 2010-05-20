@@ -1,0 +1,17 @@
+<% if flash[:msg] %>
+<div id="mensagem">
+	<%=flash[:msg]%>
+</div>
+<% end %>
+
+<% form_for @servico do |f| %>
+	<%=f.error_messages%>
+	
+	<label>
+		Link do Video:
+		<%=f.text_field :tx_video %>
+	</label><br><br>
+	
+	
+	<button type="submit">Salvar</button>
+<% end %>

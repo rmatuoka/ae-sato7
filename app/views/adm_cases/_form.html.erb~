@@ -1,0 +1,24 @@
+<% if flash[:msg] %>
+<div id="mensagem">
+	<%=flash[:msg]%>
+</div>
+<% end %>
+
+<% form_for @case, :html => { :multipart => :true } do |f| %>
+	<%=f.error_messages%>
+	<label>
+		Titulo:
+		<%=f.text_field :titulo %>
+	</label><br><br>
+	
+	<label>
+		Descricao:<br>
+		<%=f.text_area :case, :class => "mceEditor" %>
+	</label><br><br>
+	
+	<label>
+		Imagem: <%=f.file_field :fotocase%>
+	</label><br><br>
+	
+	<button type="submit">Salvar</button>
+<% end %>
