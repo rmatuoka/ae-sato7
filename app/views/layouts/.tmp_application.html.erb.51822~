@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>SATO7 - Comunica&ccedil;&atilde;o Estrat&eacute;gica</title>
+<meta name="title" content="SATO7 - Comunica��o Estrat�gica" />
+<meta name="url" content="http://www.sato7.com.br" />
+<meta name="description" content="A SATO7 � uma ag�ncia de comunica��o completa, que oferece as melhores solu��es para seus clientes, adequadas � sua realidade e necessidades, que trazem resultados concretos para os seus neg�cios e para sua marca." />
+<meta name="keywords" content="comunica��o, branding, marketing, m�dia, m�dia social, m�dias sociais, twitter, formspring, web, cria��o, imprensa, rela��es p�blicas, RP, Eventos" />
+<meta name="charset" content="ISO-8859-1" />
+<meta name="autor" content="Rafael Matuoka Chiocchetti" />
+<meta name="company" content="Ag�ncia Econ�mica" />
+<meta name="revisit-after" content="2" />
+<link rev="made" href="mailto:rmatuoka@agenciaeconomica.com.br" />
+<link REL="shortcut icon" href="/icone.ico" type="image/x-icon" />
+<%=stylesheet_link_tag "template"%>
+<%= javascript_include_tag "jquery" %>
+<%= javascript_include_tag "funcoes" %> 
+</head>
+<body>
+<div id="Detalhe">
+<%= render :partial => "layouts/modal" %>
+	<div id="Geral">
+		<div id="Header">
+			<%= render :partial => "layouts/header" %>
+		</div>
+		
+			<%= yield :destaque %> 
+		
+		<div id="Content">
+			<%=yield%>
+		</div>
+		
+		<%= render :partial => "layouts/footer" %>
+	</div>
+</div>
+</body>
+</html>

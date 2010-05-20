@@ -1,13 +1,58 @@
+<% content_for :head do %>
+
+<%=stylesheet_link_tag "coverflow"%>
+<%= javascript_include_tag "jquery-1.4.2.min" %>
+<%= javascript_include_tag "ContentFlow/contentflow.js" %>
+ <script>
+		//var cf = new ContentFlow('contentFlow', {reflectionColor: "#ffff00"});
+</script>
+<%end%>
 			<%=render :partial => "layouts/right"%>
 						
 			<% content_for :destaque do %>
-			<div id="DestaqueFlash">
-				<object id="myFlashMovie" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="950" height="466" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">
+			<div id="DestaqueFlash"><br>
+			<br>
+			<br>
+				<div id="cover" class="ContentFlow">
+		            <div class="loadIndicator"><div class="indicator"></div></div>
+		            <div class="flow galery clearfix">
+		                <div class="item" href="http://www.youtube.com/watch?v=LqV-9-5Tzmw" target="_blank">
+		                	<img class="content" src="/images/home/pic0.png"/>
+							<div class="caption">Taiko Atibaia</div> 
+		                </div>
+		                
+		                <div class="item" href="http://www.youtube.com/watch?v=rm0JJrY1cx4" target="_blank">
+		                	<img class="content" src="/images/home/pic1.png"/>
+							<div class="caption">HD Computers</div>
+		                </div>
+		                
+		                <div class="item" href="http://www.youtube.com/watch?v=d9GxBLL-bm4" target="_blank">
+		                	<img class="content" src="/images/home/pic2.png"/>
+							<div class="caption">Festa das Flores de Atibaia</div>
+		                </div>
+		               
+		                <div class="item" href="http://www.youtube.com/watch?v=5LjM4oFDboA" target="_blank">
+		                	<img class="content" src="/images/home/kleber.jpg"/>
+							<div class="caption">Kleber Recicláveis</div>
+		                </div>
+		           
+		            </div>
+		            
+		            <div class="globalCaption"></div>
+		            <div class="scrollbar">
+		                <div class="nextButton"><img src="images/setaDir.png" width="88" height="149" /></div>
+		                <div class="preButton"><img src="images/setaEsq.png" width="88" height="149" /></div>
+		            </div>
+		   		 </div>
+				 
+				 
+				
+				<!-- <object id="myFlashMovie" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="950" height="466" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">
 				<param name="movie" value="/destaque.swf" />
 				<param name="quality" value="high" />
 				<param name="wmode" value="transparent" /> 
 				<embed type="application/x-shockwave-flash" width="950" height="466" src="/destaque.swf" name="myFlashMovie" quality="high" wmode="transparent" allowscriptaccess="sameDomain" pluginspage="http://www.macromedia.com/go/getflashplayer" align="middle"></embed>
-				</object>
+				</object> -->
 
 			</div>
 			<% end %> 
@@ -41,4 +86,6 @@
 					</div>
 				</div>
 			</div>
+
+
 			
