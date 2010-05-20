@@ -131,7 +131,7 @@ new ContentFlowAddOn ('DEFAULT', {
          * called after the active item is clicked.
          */
         onclickActiveItem: function (item) {
-            var url, target;
+            /*var url, target;
 
             if (url = item.content.getAttribute('href')) {
                 target = item.content.getAttribute('target');
@@ -144,11 +144,14 @@ new ContentFlowAddOn ('DEFAULT', {
             }
 
             if (url) {
-                if (target)
-                    window.open(url, target).focus();
-                else
-                    window.location.href = url;
+                if (target) {
+					window.open(url, target).focus();
+				}
+				else {
+					window.location.href = url;
+				}
             }
+            */
         },
         
         /*

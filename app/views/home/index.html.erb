@@ -2,9 +2,9 @@
 
 <%=stylesheet_link_tag "coverflow"%>
 <%= javascript_include_tag "jquery-1.4.2.min" %>
-<%= javascript_include_tag "ContentFlow/contentflow.js" %>
- <script>
-		//var cf = new ContentFlow('contentFlow', {reflectionColor: "#ffff00"});
+<script language="JavaScript" type="text/javascript" src="/javascripts/ContentFlow/contentflow.js"></script>
+<script>
+		var cf = new ContentFlow('cover', {});
 </script>
 <%end%>
 			<%=render :partial => "layouts/right"%>
@@ -16,19 +16,20 @@
 				<div id="cover" class="ContentFlow">
 		            <div class="loadIndicator"><div class="indicator"></div></div>
 		            <div class="flow galery clearfix">
-		                <div class="item" href="http://www.youtube.com/watch?v=LqV-9-5Tzmw" target="_blank">
-		                	<img class="content" src="/images/home/pic0.png"/>
-							<div class="caption">Taiko Atibaia</div> 
-		                </div>
+		                <div class="item" >
+	                		<img class="content" src="/images/home/pic0.png"/>
+							<div class="caption">Taiko Atibaia</div>
+						</div>	 
+
 		                
 		                <div class="item" href="http://www.youtube.com/watch?v=rm0JJrY1cx4" target="_blank">
 		                	<img class="content" src="/images/home/pic1.png"/>
 							<div class="caption">HD Computers</div>
 		                </div>
 		                
-		                <div class="item" href="http://www.youtube.com/watch?v=d9GxBLL-bm4" target="_blank">
+		                <div class="item">
 		                	<img class="content" src="/images/home/pic2.png"/>
-							<div class="caption">Festa das Flores de Atibaia</div>
+							<div class="caption"><a href="http://www.youtube.com/watch?v=d9GxBLL-bm4" target="blank">Festa das Flores de Atibaia</a></div>
 		                </div>
 		               
 		                <div class="item" href="http://www.youtube.com/watch?v=5LjM4oFDboA" target="_blank">

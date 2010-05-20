@@ -1,0 +1,93 @@
+<% content_for :head do %>
+
+<%=stylesheet_link_tag "coverflow"%>
+<%= javascript_include_tag "jquery-1.4.2.min" %>
+<script language="JavaScript" type="text/javascript" src="/javascripts/ContentFlow/contentflow.js"></script>
+<script>
+		var cf = new ContentFlow('cover', {});
+</script>
+<%end%>
+			<%=render :partial => "layouts/right"%>
+						
+			<% content_for :destaque do %>
+			<div id="DestaqueFlash"><br>
+			<br>
+			<br>
+				<div id="cover" class="ContentFlow">
+		            <div class="loadIndicator"><div class="indicator"></div></div>
+		            <div class="flow galery clearfix">
+		                	<a class="item" href="http://www.youtube.com/watch?v=LqV-9-5Tzmw" target="_blank" onclick="" >
+		                		<img class="content" src="/images/home/pic0.png"/>
+								<div class="caption">Taiko Atibaia</div>
+							</a> 
+
+		                
+		                <div class="item" href="http://www.youtube.com/watch?v=rm0JJrY1cx4" target="_blank">
+		                	<img class="content" src="/images/home/pic1.png"/>
+							<div class="caption">HD Computers</div>
+		                </div>
+		                
+		                <div class="item">
+		                	<img class="content" src="/images/home/pic2.png"/>
+							<div class="caption"><a href="http://www.youtube.com/watch?v=d9GxBLL-bm4" target="blank">Festa das Flores de Atibaia</a></div>
+		                </div>
+		               
+		                <div class="item" href="http://www.youtube.com/watch?v=5LjM4oFDboA" target="_blank">
+		                	<img class="content" src="/images/home/kleber.jpg"/>
+							<div class="caption">Kleber Recicláveis</div>
+		                </div>
+		           
+		            </div>
+		            
+		            <div class="globalCaption"></div>
+		            <div class="scrollbar">
+		                <div class="nextButton"><img src="images/setaDir.png" width="88" height="149" /></div>
+						<div class="preButton"><img src="images/setaEsq.png" width="88" height="149" /></div>
+						
+		            </div>
+		   		 </div>
+				 
+				 
+				
+				<!-- <object id="myFlashMovie" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="950" height="466" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">
+				<param name="movie" value="/destaque.swf" />
+				<param name="quality" value="high" />
+				<param name="wmode" value="transparent" /> 
+				<embed type="application/x-shockwave-flash" width="950" height="466" src="/destaque.swf" name="myFlashMovie" quality="high" wmode="transparent" allowscriptaccess="sameDomain" pluginspage="http://www.macromedia.com/go/getflashplayer" align="middle"></embed>
+				</object> -->
+
+			</div>
+			<% end %> 
+			
+			<div id="BoxLeft">
+				<div id="Noticias">
+					<%= image_tag "home/tit_noticias.png", :alt => "Not&iacute;cias", :style => "margin-bottom:13px;" %> 
+					
+					<%@noticias.each do |n|%>
+						<div id="Noticia">
+							<table width="100%" cellspacing="" cellpadding="0" border="0">
+							<tr>
+							<td valign="top" style="padding-top:20px;">
+								<div class="Foto">
+								<%=image_tag n.foto.url(:thumb)%>
+								</div>
+							</td>
+							<td>
+								<p class="Titulo"><%=n.titulo%></p>
+								<p class="Texto"><%=n.descricao%></p>
+								
+								<p><%= image_tag "home/bullet.gif", :alt => "Leia mais" %><%=link_to "Ler mais", ler_noticia_path(n)%></p>
+							</td>
+							</tr>
+							</table>
+						</div>
+					<%end%>
+					
+					<div id="TodasNoticias">
+						<%= image_tag "home/bullet.gif", :alt => "Leia mais" %><%=link_to "Veja todas as not&iacute;cias", ler_noticias_path%>
+					</div>
+				</div>
+			</div>
+
+
+			
