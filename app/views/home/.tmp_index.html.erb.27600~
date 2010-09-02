@@ -1,46 +1,16 @@
 <% content_for :head do %>
 
 <%=stylesheet_link_tag "coverflow"%>
-
 <%= javascript_include_tag "jquery-1.4.2.min" %>
-<%= javascript_include_tag "jquery.cycle.min.js" %>
 <script language="JavaScript" type="text/javascript" src="/javascripts/ContentFlow/contentflow.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('.slideshow').cycle({
-		fx: 'fade',
-		prev:   '#prev', 
-   		next:   '#next', 
-    	after:   onAfter, 
-    	timeout: 0 
-		 
-	});
-});
-
-function onAfter(curr, next, opts) {
-    //var index = opts.currSlide;
-    //$('#prev')[index == 0 ? 'hide' : 'show']();
-    //$('#next')[index == opts.slideCount - 1 ? 'hide' : 'show']();
-}
+<script>
+		var cf = new ContentFlow('cover', {});
 </script>
 <%end%>
-			<%#=render :partial => "layouts/right"%>
+			<%=render :partial => "layouts/right"%>
 						
 			<% content_for :destaque do %>
-			<!-- INICIO DO DESTAQUE -->
-			<div class="nav"><a id="prev" href="#" class="setaesq"><%=image_tag "setaEsq.png"%></a> <a id="next" href="#" class="setadir"><%=image_tag "setaDir.png"%></a></div>
-			<div id="DestaqueFlash" class="slideshow">
-<!-- Inicio script de fade imagens headers -->				
-
-
-
-		<%=link_to image_tag("destaque_nautilus.jpg"), 'http://www.sato7.com.br/ler_noticias/37'%>
-		<%=link_to image_tag ("destaque_NovoBlog.jpg"), 'http://blog.sato7.com.br'%>
-		<%=link_to image_tag ("destaque_rotadasbandeiras.jpg"),'http://www.sato7.com.br/ler_noticias/14'%>
-		<%=link_to image_tag ("destaque_casanova.jpg"), 'http://www.sato7.com.br/ler_noticias/36'%>				
-				
-				
-			<!-- <br>
+			<div id="DestaqueFlash"><br>
 			<br>
 			<br>
 				<div id="cover" class="ContentFlow">
@@ -75,10 +45,18 @@ function onAfter(curr, next, opts) {
 						<div class="preButton"><img src="images/setaEsq.png" width="88" height="149" /></div>
 						
 		            </div>
-		   		 </div> -->
+		   		 </div>
 				 
+				 
+				
+				<!-- <object id="myFlashMovie" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="950" height="466" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">
+				<param name="movie" value="/destaque.swf" />
+				<param name="quality" value="high" />
+				<param name="wmode" value="transparent" /> 
+				<embed type="application/x-shockwave-flash" width="950" height="466" src="/destaque.swf" name="myFlashMovie" quality="high" wmode="transparent" allowscriptaccess="sameDomain" pluginspage="http://www.macromedia.com/go/getflashplayer" align="middle"></embed>
+				</object> -->
+
 			</div>
-			<!-- FIM DO DESTAQUE -->
 			<% end %> 
 			
 			<div id="BoxLeft">
