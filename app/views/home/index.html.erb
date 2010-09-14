@@ -24,20 +24,20 @@ function onAfter(curr, next, opts) {
 }
 </script>
 <%end%>
-			<%=render :partial => "layouts/right"%>
+			<%#=render :partial => "layouts/right"%>
 						
 			<% content_for :destaque do %>
 			<!-- INICIO DO DESTAQUE -->
 			<div class="nav"><a id="prev" href="#" class="setaesq"><%=image_tag "setaEsq.png"%></a> <a id="next" href="#" class="setadir"><%=image_tag "setaDir.png"%></a></div>
-			<div id="DestaqueFlash" class="slideshow">
+			<div id="DestaqueFlash" class="slideshow" style="margin-top:12px;">
 <!-- Inicio script de fade imagens headers -->				
 
 
 
-		<%=link_to image_tag("destaque_nautilus.jpg"), 'http://www.sato7.com.br/ler_noticias/37'%>
-		<%=link_to image_tag ("destaque_NovoBlog.jpg"), 'http://blog.sato7.com.br'%>
-		<%=link_to image_tag ("destaque_rotadasbandeiras.jpg"),'http://www.sato7.com.br/ler_noticias/14'%>
-		<%=link_to image_tag ("destaque_casanova.jpg"), 'http://www.sato7.com.br/ler_noticias/36'%>				
+		<%=link_to image_tag("destaque_nautilus.png"), 'http://www.sato7.com.br/ler_noticias/37'%>
+		<%=link_to image_tag ("destaque_NovoBlog.png"), 'http://blog.sato7.com.br'%>
+		<%=link_to image_tag ("destaque_rotadasbandeiras.png"),'http://www.sato7.com.br/ler_noticias/14'%>
+		<%=link_to image_tag ("destaque_casanova.png"), 'http://www.sato7.com.br/ler_noticias/36'%>				
 				
 				
 			<!-- <br>
