@@ -52,6 +52,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :contatos
   map.resources :adm_contatos
   map.resources :tagsearchs
+  map.resources :blog, :singular => :blog_item
   map.resources :ler_noticias
   map.resources :home, :singular => :home_item
 
